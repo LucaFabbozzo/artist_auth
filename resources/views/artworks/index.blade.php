@@ -19,8 +19,8 @@
                         @foreach ($all_artworks as $artwork)
                             <tr class="text-white">
                                 <td class="text-white">{{ $artwork->id }}</td>
-                                <td class="text-white">{{ $artwork->artist->name }}</td>
-                                <td class="text-white">{{ $artwork->museum->name }}</td>
+                                <td class="text-white"><a href="{{route('admin.artist.show', $artwork->artist)}}">{{ $artwork->artist->name }}</a></td>
+                                <td class="text-white"><a href="{{route('admin.museums.show', $artwork->museum)}}">{{ $artwork->museum->name }}</a></td>
                                 <td class="text-white">{{ $artwork->name }}</td>
                                 <td class="text-white">{{ $artwork->year }}</td>
                                 <td>
