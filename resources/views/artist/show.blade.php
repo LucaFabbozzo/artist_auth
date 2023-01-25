@@ -11,7 +11,7 @@
         <h5>Elenco opere</h5>
         <ul>
             @forelse ($artist->artworks as $artwork)
-                <li>{{$artwork->name}}</li>
+                <li><a href="{{route('admin.artwork.show', $artwork)}}">{{$artwork->name}}</a></li>
             @empty
                 <li>Nessun risultato trovato</li>
             @endforelse
