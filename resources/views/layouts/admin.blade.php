@@ -20,17 +20,20 @@
 
 <body>
 
+
+
     @include('partials.header')
+    <div class="d-flex">
+        @auth
 
-    @auth
+            @include('partials.aside')
 
-        @include('partials.aside')
+        @endauth
 
-    @endauth
-
-    <main>
-        @yield('content')
-    </main>
+        <main>
+            @yield('content')
+        </main>
+    </div>
 </body>
 
 </html>

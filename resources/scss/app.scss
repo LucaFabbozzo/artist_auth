@@ -8,6 +8,8 @@ body{
 }
 
 
-aside{
+aside nav{
     width: 200px;
+    height: calc(100vh - 57px);
+    overflow: auto;
 }
