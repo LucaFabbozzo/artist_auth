@@ -18,6 +18,10 @@ class Artwork extends Model
         return $this->hasMany(Artwork::class);
     }
 
+    public function artist() {
+        return $this->belongsTo(Artist::class);
+    }
+
     public static function generateSlug($string){
         $slug = Str::slug($string, '-');
 
