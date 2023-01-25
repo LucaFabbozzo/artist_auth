@@ -57,9 +57,9 @@ class ArtworkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Artwork $artwork)
     {
-        //
+        return view('artworks.edit', compact('artwork'));
     }
 
     /**
@@ -69,9 +69,18 @@ class ArtworkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Artwork $artwork)
     {
-        //
+        $artwork_data = $request->all();
+        if($artwork_data['name']!= $artwork->name){
+            $artwork_dat['slug'] = Artwork::generateSlug($artwork_data['name']);
+
+        }else{
+            $artwork_data['name'] = $artwork->slug;
+        }
+        $artwork->update($artwork_data);
+
+        return redirect()->route('admin.artwork.show', $artwork)->with('message','Post aggiornato correttamente');
     }
 
     /**
