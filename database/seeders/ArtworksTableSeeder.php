@@ -24,6 +24,8 @@ class ArtworksTableSeeder extends Seeder
         foreach ($artwork_data as $artwork) {
             $new_artwork = new Artwork();
             //dump($artwork['artist']);
+            //echo $artwork['artist'];
+            //echo $artwork['name'];
             $artist_id = Artist::where('name','like','%' . $artwork['artist'] .'%')->first()->id;
 
             $new_artwork->artist_id = $artist_id;
