@@ -21,9 +21,12 @@
 <body>
 
     @include('partials.header')
-    @include('partials.aside')
 
+    @auth
 
+        @include('partials.aside')
+
+    @endauth
 
     <main>
         @yield('content')
