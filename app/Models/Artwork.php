@@ -13,4 +13,8 @@ class Artwork extends Model
         return $this->belongsTo(Artist::class);
     }
 
+    public function museum() {
+        return $this->belongsTo(Museum::class);
+    }
+
 }

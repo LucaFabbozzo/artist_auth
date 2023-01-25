@@ -26,8 +26,8 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">artist ID</th>
-                            <th scope="col">Museum ID</th>
+                            <th scope="col">Artist</th>
+                            <th scope="col">Museum</th>
                             <th scope="col">Name</th>
                             <th scope="col">Year</th>
                             <th scope="col">actions</th>
@@ -37,8 +37,8 @@
                         @foreach ($all_artworks as $artwork)
                             <tr class="text-white">
                                 <td class="text-white">{{ $artwork->id }}</td>
-                                <td class="text-white">{{ $artwork->artist_id }}</td>
-                                <td class="text-white">{{ $artwork->museum_id }}</td>
+                                <td class="text-white">{{ $artwork->artist->name }}</td>
+                                <td class="text-white">{{ $artwork->museum->name }}</td>
                                 <td class="text-white">{{ $artwork->name }}</td>
                                 <td class="text-white">{{ $artwork->year }}</td>
                                 <td>
