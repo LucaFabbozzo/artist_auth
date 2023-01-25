@@ -7,9 +7,13 @@
         <p>{{$artwork->year}}</p>
         <p>{{$artwork->description}}</p>
 
+        <a class="btn btn-primary" href="{{route('admin.artist.show',$artwork)}}">Go to Artist</a>
+
+
 
 
 
     </div>
+
 
 @endsection
