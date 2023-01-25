@@ -48,7 +48,7 @@ class ArtworkController extends Controller
      */
     public function show(Artwork $artwork)
     {
-        return view('artwork.show', compact('artwork'));
+        return view('artworks.show',compact('artwork'));
     }
 
     /**
